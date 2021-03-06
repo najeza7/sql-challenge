@@ -6,6 +6,10 @@ ON (e.emp_no = s.emp_no)
 ORDER BY e.emp_no;
 
 --2. List first name, last name, and hire date for employees who were hired in 1986.
+--First set datestyle so we don't have problems with our consult 
+SET DATESTYLE='SQL,DMY';
+
+--Then we do the consult
 SELECT first_name, last_name, hire_date
 FROM employees
 WHERE hire_date BETWEEN '01/01/1986' AND '31/12/1986';
